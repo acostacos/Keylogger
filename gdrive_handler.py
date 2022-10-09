@@ -27,7 +27,6 @@ class GDriveHandler:
         self.credentials = creds
 
     def upload_file(self, filename, mime_type, parent_folder_id) -> None:
-        print('ran upload function of gdrive handler')
         try:
             self.__authenticate()
             service = build('drive', 'v3', credentials=self.credentials)

