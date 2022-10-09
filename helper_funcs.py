@@ -28,5 +28,5 @@ def keyIsKeyboardShortcut(key_str) -> bool:
 
 def generateFilename() -> str:
     current_time = datetime.now()
-    filename = current_time.strftime('%d-%m-%Y_%I %p')
+    filename = current_time.strftime('%d-%m-%Y')
     return f'{filename}.txt'
